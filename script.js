@@ -74,3 +74,51 @@ function plusMinus(arr) {
     return console.log(plus.toFixed(aleng), '\n',minus.toFixed(aleng), '\n',zero.toFixed(aleng));
 }
 
+//StairCase
+function staircase(n) {
+    // Write your code here
+    var output = '';
+    for(var i =0; i < n; i++) {
+        for(var j = n-1; j > i; j--) {
+               output += " ";
+        }
+        for(var k = 0; k <= i; k++) {
+            output += "#";
+        }
+        output += "\n";
+    }
+
+    console.log(output);
+}
+
+//Mini-Max Sum
+function miniMaxSum(arr) {
+    // Write your code here
+    let minMax = [];
+    let sum = 0;
+    for(let i=0;i<arr.length;i++) {
+        for(let j=0;j<arr.length;j++) {
+            sum += arr[j];
+        }
+        sum = sum - arr[i];
+        minMax.push(sum);
+        sum = 0;
+    }
+    let min = Math.min(...minMax);
+    let max = Math.max(...minMax);
+    return console.log(min, max);
+    
+}
+
+//Birtday Cake Candles
+function birthdayCakeCandles(candles) {
+    // Write your code here
+    let sum = 0;
+    let max = Math.max(...candles);
+    for(let i=0;i<candles.length;i++) {
+        if(candles[i] === max) {
+            sum += 1
+        }
+    }
+    return sum;
+}
